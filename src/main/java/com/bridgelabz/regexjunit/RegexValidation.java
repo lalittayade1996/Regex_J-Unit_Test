@@ -46,6 +46,7 @@ public class RegexValidation {
 		return matchFound;
 	}
 
+//	Partern For E-Mail
 	boolean validEmail() {
 // 		Veriable
 		String validEmail;
@@ -62,6 +63,43 @@ public class RegexValidation {
 		}
 		System.out.println();
 		return matchFound;
+	}
 
+//	Partern For Mobile Number
+	boolean validMobileNumber() {
+// 		Veriable
+		String validMobileNumber;
+		System.out.println("Enter Your Mobile Number :-");
+		validMobileNumber = SC.next();
+		Pattern pattern = Pattern.compile("^(0|91)?[7-9][0-9]{9}$");
+		Matcher matcher = pattern.matcher(validMobileNumber);
+//			Condition
+		boolean matchFound = matcher.matches();
+		if (matchFound) {
+			System.out.println("Mobile Number is Correct");
+		} else {
+			System.out.println("Mobile Number is Inorrect");
+		}
+		System.out.println();
+		return matchFound;
+	}
+
+//	Partern For Password
+	boolean validPassword() {
+// 		Veriable
+		String validPassword;
+		System.out.println("Enter Your Password :-");
+		validPassword = SC.next();
+		Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8}$");
+		Matcher matcher = pattern.matcher(validPassword);
+//			Condition
+		boolean matchFound = matcher.matches();
+		if (matchFound) {
+			System.out.println("Given Password is Correct");
+		} else {
+			System.out.println("Given Password is Inorrect");
+		}
+		System.out.println();
+		return matchFound;
 	}
 }
