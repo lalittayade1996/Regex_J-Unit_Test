@@ -10,10 +10,17 @@ import com.bridgelabz.regexjunit.RegexValidation;
 
 public class RegexTestCase {
 
-	@Test
+	@Before
 	public void check_Valid_Firstname() {
 		RegexValidation regex = new RegexValidation();
 		boolean check = regex.validFirstName();
+		assertTrue(check);
+	}
+
+	@Test
+	public void check_Valid_Lastname() {
+		RegexValidation regex = new RegexValidation();
+		boolean check = regex.validLastName();
 		assertTrue(check);
 	}
 }

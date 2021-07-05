@@ -23,6 +23,26 @@ public class RegexValidation {
 		} else {
 			System.out.println("First Namer is Inorrect");
 		}
+		System.out.println();
+		return matchFound;
+	}
+
+//		Partern For Last Name
+	boolean validLastName() {
+// 		Veriable
+		String lastName;
+		System.out.println("Enter Your Last Name :-");
+		lastName = SC.next();
+		Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
+		Matcher matcher = pattern.matcher(lastName);
+//		Condition
+		boolean matchFound = matcher.matches();
+		if (matchFound) {
+			System.out.println("Last Name is Correct");
+		} else {
+			System.out.println("Last Name is Inorrect");
+		}
+		System.out.println();
 		return matchFound;
 	}
 }
