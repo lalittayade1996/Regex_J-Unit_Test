@@ -45,4 +45,23 @@ public class RegexValidation {
 		System.out.println();
 		return matchFound;
 	}
+
+	boolean validEmail() {
+// 		Veriable
+		String validEmail;
+		System.out.println("Enter Your Email :-");
+		validEmail = SC.next();
+		Pattern pattern = Pattern.compile("^[a-z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+		Matcher matcher = pattern.matcher(validEmail);
+//			Condition
+		boolean matchFound = matcher.matches();
+		if (matchFound) {
+			System.out.println("Email is Correct");
+		} else {
+			System.out.println("Email is Inorrect");
+		}
+		System.out.println();
+		return matchFound;
+
+	}
 }

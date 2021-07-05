@@ -23,4 +23,11 @@ public class RegexTestCase {
 		boolean check = regex.validLastName();
 		assertTrue(check);
 	}
+
+	@After
+	public void check_Valid_Emaile() {
+		RegexValidation regex = new RegexValidation();
+		boolean check = regex.validEmail();
+		assertTrue(check);
+	}
 }
